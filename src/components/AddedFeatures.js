@@ -3,11 +3,12 @@ import React from 'react';
 import AddedFeature from './AddedFeature';
 import { connect } from 'react-redux';
 
-import { removeFeature } from '../actions';
+import { removeFeature, updatePrice } from '../actions';
 
 const AddedFeatures = props => {
 	const handleRemoveFeature = index => {
 		props.removeFeature(index);
+		props.updatePrice();
 	};
 
 	return (
@@ -37,4 +38,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, { removeFeature })(AddedFeatures);
+export default connect(mapStateToProps, { removeFeature, updatePrice })(AddedFeatures);

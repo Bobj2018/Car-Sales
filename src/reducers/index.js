@@ -32,6 +32,13 @@ export const carReducer = (state = initialState, action) => {
 					features : state.car.features.filter((word, index) => index !== action.payload)
 				}
 			};
+		// case 'UPDATE_PRICE':
+		// 	return {
+		// 		...state,
+		// 		additionalPrice : state.car.features.reduce((acc, val) => {
+		// 			return acc + val.price;
+		// 		}, 0)
+		// 	};
 		default:
 			return state;
 	}
